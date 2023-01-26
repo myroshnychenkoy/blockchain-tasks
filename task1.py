@@ -26,18 +26,19 @@ class KeccakState(object):
     """
     A keccak state container. Stores a 2d 5x5 array where each array element consists of a single word with w bits
     """
-    def __init__(self, bitrate, b):
+    def __init__(self, bitrate, lane_width):
         self.bitrate = bitrate
-        self.b = b
-        self.lanew = self.b // 25
-        self.s = [[b * bitarray('0', endian='little') for __ in range(5)] for _ in range(5)]
+        self.lanew = lane_width
+        self.s = [[self.lanew * bitarray('0', endian='little') for __ in range(5)] for _ in range(5)]
 
     def absorb(self, Pi):
         """
         Mixes in the given bitrate-length string to the state.
         """
-        for y, x in itertools.product(range(5), range(5)):
-            self.s[x][y] = (self.s[x][y][:self.bitrate] ^ Pi) + self.s[x][y][:-self.bitrate]
+        for pos in range(self.bitrate // self.lanew):
+            x = pos // 5
+            y = pos % 5
+            self.s[x][y] ^= self.s[x][y] ^ Pi[pos*self.lanew:(pos+1)*self.lanew]
 
     def squeeze(self):
         """
@@ -53,16 +54,16 @@ class KeccakHash(object):
     def __init__(self, bitrate: int, capacity: int, digest_size: int):
         assert digest_size in {224, 256, 384, 512}, "SHAKE is not supported. Digest size shout be one of 224, 256, " \
                                                     "384 or 512 bit."
-        assert bitrate + capacity in (25, 50, 100, 200, 400, 800, 1600)
-        self.w = 64  # w ∈ {1,2,4,8,16,32,64} - the state lane length
-        self.b = 1600  # b=25w. b ∈ {25,50,100,200,400,800,1600} - the width of the permutation and the width of the
-        # state in the sponge construction
+        self.b = bitrate + capacity  # b=25w. b ∈ {25,50,100,200,400,800,1600} - the width of the permutation
+                                     # and the width of the state in the sponge construction
+        assert self.b in (25, 50, 100, 200, 400, 800, 1600)
+        self.w = self.b // 25  # w ∈ {1,2,4,8,16,32,64} - the state lane length
         # c - capacity, r - bitrate
         _l = int(log2(self.w))
         self.n = 12 + 2 * _l
         self.digest_size = digest_size
         self.block_size = bitrate
-        self.state = KeccakState(self.block_size, self.b)
+        self.state = KeccakState(self.block_size, self.w)
         self.buffer = bitarray('')
 
     def __repr__(self):
@@ -106,7 +107,7 @@ class KeccakHash(object):
 
         # ι step
         # A[0][0] = A[0][0] ^ RC
-        A[0][0] = A[0][0] ^ bitarray(bin(RC)[2:].ljust(self.b, '0'), endian='little')
+        A[0][0] = A[0][0] ^ bitarray(bin(RC)[2:].ljust(self.w, '0'), endian='little')
         return A
 
     @staticmethod
@@ -186,20 +187,20 @@ class KeccakHash(object):
             raise ValueError('fmt should be hex or str')
 
     @staticmethod
-    def preset(bitrate_bits, capacity_bits, output_bits):
+    def preset(bitrate_bits, capacity_bits, digest_bits):
         """
         Returns a factory function for the given bitrate, sponge capacity and output length.
         The function accepts an optional initial input, ala hashlib.
         """
         def create(initial_input=None):
-            h = KeccakHash(bitrate_bits, capacity_bits, output_bits)
+            h = KeccakHash(bitrate_bits, capacity_bits, digest_bits)
             if initial_input is not None:
                 h.absorb(initial_input)
             return h
         return create
 
 
-Keccak512 = KeccakHash.preset(576, 1024, 512)
+Keccak512 = KeccakHash.preset(bitrate_bits=576, capacity_bits=1024, digest_bits=512)
 print(Keccak512)
 
 h = Keccak512('test').hexdigest(fmt='str')
@@ -208,5 +209,11 @@ h = Keccak512('test').hexdigest(fmt='str')
 # h2 = k.hexdigest()
 print(h)
 
+keccak_pycrypto = keccak.new(digest_bits=512)
+keccak_pycrypto.update(b'test')
+print(keccak_pycrypto.hexdigest())
+
 assert [*KeccakHash.get_padding([174, 188, 223], 16)] ==\
        [bitarray('0111 0101 0011 1101'), bitarray('1111 1011 0110 0001')]  # Check Keccak padding for [ae, bc, df]
+
+assert h == keccak_pycrypto.hexdigest()
