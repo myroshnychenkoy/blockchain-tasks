@@ -1,5 +1,5 @@
 import itertools
-from typing import List, Generator, BinaryIO
+from typing import Type, List, Generator, BinaryIO
 from io import IOBase
 from math import log2
 from bitarray import bitarray
@@ -55,7 +55,7 @@ class KeccakState(object):
 
 
 class KeccakHash(object):
-    def __init__(self, bitrate: int, capacity: int, digest_size: int, Mbits='01'):
+    def __init__(self, bitrate: int, capacity: int, digest_size: int,):
         assert digest_size in {224, 256, 384, 512}, "SHAKE is not tested. Digest size shout be one of 224, 256, " \
                                                     "384 or 512 bit."
         self.b = bitrate + capacity  # b=25w. b ∈ {25,50,100,200,400,800,1600} - the width of the permutation
@@ -66,13 +66,11 @@ class KeccakHash(object):
         self.n = 12 + 2 * _l
         self.digest_size = digest_size
         self.block_size = bitrate
-        self.Mbits = Mbits
         self.state = KeccakState(self.block_size, self.w)
         self.buffer = bitarray('', endian='little')
 
     def __repr__(self):
-        return f"<KeccakHash r: {self.block_size}, c: {self.b - self.block_size}," \
-               f"digest: {self.digest_size}, Mbits: {self.Mbits}>"
+        return f"<KeccakHash r: {self.block_size}, c: {self.b - self.block_size}, digest: {self.digest_size}>"
 
     def keccak_f(self, A):
         for i in range(self.n):
@@ -110,19 +108,18 @@ class KeccakHash(object):
         return A
 
     @staticmethod
-    def get_padded(Mbytes: bitarray, bitrate: int, Mbits='01') -> Generator[bitarray, None, None]:
+    def get_padded(Mbytes: bitarray, bitrate: int) -> Generator[bitarray, None, None]:
         """
         https://cryptologie.net/article/387/byte-ordering-and-bit-numbering-in-keccak-and-sha-3/
         https://keccak.team/keccak_bits_and_bytes.html
         @param Mbytes: bitarray of Message bits in big-endian LSB bit numbering
         @param bitrate:
-        @param Mbits: domain separation bits. '' for Keccak '01' for SHA3, '1111' for SHAKE, '00' for cSHAKE
         @return: generator for padded Message parts in bitrate-sized chunks
         """
         m_bits = Mbytes.copy()
-        # craft delimiter + padding
+        # craft padding
         padding_len = bitrate - len(m_bits) % bitrate
-        padding = bitarray(Mbits) + bitarray([1] + [0] * (padding_len - len(Mbits) - 2) + [1])
+        padding = bitarray([1] + [0] * (padding_len - 2) + [1])
         # construct the padded message and split in lanes
         m_bits += padding
         while len(m_bits) > 0:
@@ -132,7 +129,7 @@ class KeccakHash(object):
             yield _b
 
     @staticmethod
-    def get_padded_from_bytearray(Mbytes: List[int], bitrate: int, Mbits='01') -> Generator[bitarray, None, None]:
+    def get_padded_from_bytearray(Mbytes: List[int], bitrate: int) -> Generator[bitarray, None, None]:
         """
         @param Mbytes: list of Message bytes
         @param bitrate:
@@ -147,7 +144,7 @@ class KeccakHash(object):
 
         _m_bits = [access_bit(Mbytes, i) for i in range(len(Mbytes) * 8)]  # Message in big-endian LSB bit numbering
         m_bits = bitarray(_m_bits, endian='little')  # Message converted to bit array. NOT the same as Mbits!
-        return KeccakHash.get_padded(m_bits, bitrate, Mbits)
+        return KeccakHash.get_padded(m_bits, bitrate)
 
     def _absorb_block(self, Pi):
         assert len(Pi) == self.block_size
@@ -172,7 +169,7 @@ class KeccakHash(object):
             self.buffer = self.buffer[self.block_size:]
 
     def absorb_final(self):
-        padded = next(self.get_padded(self.buffer, self.block_size, self.Mbits))
+        padded = next(self.get_padded(self.buffer, self.block_size))
         self._absorb_block(padded)
         self.buffer = []
 
@@ -198,39 +195,63 @@ class KeccakHash(object):
         else:
             raise ValueError('fmt should be hex or str')
 
-    @staticmethod
-    def preset(bitrate_bits, capacity_bits, digest_bits, Mbits):
+
+class SHA3Hash(KeccakHash):
+    def __init__(self, bitrate: int, capacity: int, digest_size: int):
         """
-        Returns a factory function for the given bitrate, sponge capacity, output (digest) length and domain separation bits.
-        The function accepts an optional initial input, ala hashlib.
+        FIPS 202 utilises different padding method then 'original' Keccak. Instead of `M + 1 + 0*j + 1`
+        it's now `M + d + 0*j + 1`, where d is a domain separation bits and equal 0x06 for SHA3 instances.
         """
-        def create(initial_input=None):
-            keccak_obj = KeccakHash(bitrate_bits, capacity_bits, digest_bits, Mbits)
-            if initial_input is not None:
-                keccak_obj.absorb(initial_input)
-            return keccak_obj
-        return create
+        super().__init__(bitrate, capacity, digest_size)
+        assert self.b == 1600
+        # self.Mbits = '01'
+        self.d = '011'  # 0x06 in LSB bit order
+
+    def get_padded(self, Mbytes: bitarray, bitrate: int) -> Generator[bitarray, None, None]:
+        m_bits = Mbytes.copy()
+        # craft delimiter + padding
+        padding_len = bitrate - len(m_bits) % bitrate
+        padding = bitarray(self.d) + bitarray([0] * (padding_len - len(self.d) - 1) + [1])
+        # construct the padded message and split in lanes
+        m_bits += padding
+        while len(m_bits) > 0:
+            _b = bitarray(endian='little')
+            _b.frombytes(m_bits[:bitrate].tobytes())
+            m_bits = m_bits[bitrate:]
+            yield _b
 
 
-Keccak224 = KeccakHash.preset(bitrate_bits=1152, capacity_bits=448, digest_bits=224, Mbits='')
-Keccak256 = KeccakHash.preset(bitrate_bits=1088, capacity_bits=512, digest_bits=256, Mbits='')
-Keccak384 = KeccakHash.preset(bitrate_bits=832, capacity_bits=768, digest_bits=384, Mbits='')
-Keccak512 = KeccakHash.preset(bitrate_bits=576, capacity_bits=1024, digest_bits=512, Mbits='')
+def KeccakFamilyFactory(subset_class: Type[KeccakHash], bitrate_bits: int, capacity_bits: int, digest_bits: int):
+    """
+    Returns a factory function for the given bitrate, sponge capacity and output (digest) length.
+    The function accepts an optional initial input, ala hashlib.
+    """
+    def create(initial_input=None):
+        keccak_obj = subset_class(bitrate_bits, capacity_bits, digest_bits)
+        if initial_input is not None:
+            keccak_obj.absorb(initial_input)
+        return keccak_obj
+    return create
+
+
+Keccak224 = KeccakFamilyFactory(subset_class=KeccakHash, bitrate_bits=1152, capacity_bits=448, digest_bits=224)
+Keccak256 = KeccakFamilyFactory(subset_class=KeccakHash, bitrate_bits=1088, capacity_bits=512, digest_bits=256)
+Keccak384 = KeccakFamilyFactory(subset_class=KeccakHash, bitrate_bits=832, capacity_bits=768, digest_bits=384)
+Keccak512 = KeccakFamilyFactory(subset_class=KeccakHash, bitrate_bits=576, capacity_bits=1024, digest_bits=512)
+
+SHA3_224 = KeccakFamilyFactory(subset_class=SHA3Hash, bitrate_bits=1152, capacity_bits=448, digest_bits=224)
+SHA3_256 = KeccakFamilyFactory(subset_class=SHA3Hash, bitrate_bits=1088, capacity_bits=512, digest_bits=256)
+SHA3_384 = KeccakFamilyFactory(subset_class=SHA3Hash, bitrate_bits=832, capacity_bits=768, digest_bits=384)
+SHA3_512 = KeccakFamilyFactory(subset_class=SHA3Hash, bitrate_bits=576, capacity_bits=1024, digest_bits=512)
 
 
 if __name__ == "__main__":
     assert [*KeccakHash.get_padded_from_bytearray([174, 188, 223], 16)] == \
         [bitarray('0111 0101 0011 1101'),
-         bitarray('1111 1011 0110 0001')], "Check Keccak padding for [\\xae, \\xbc, \\xdf]"
+         bitarray('1111 1011 1000 0001')], "Check Keccak padding for [\\xae, \\xbc, \\xdf]"
 
     # Assert with PyCryptodome result
-    k512 = Keccak512(b'test')
-    k512_hexdigest = k512.hexdigest(fmt='str')
-
-    keccak_pycrypto = keccak.new(digest_bits=512)
-    keccak_pycrypto.update(b'test')
-
-    assert k512_hexdigest == keccak_pycrypto.hexdigest()
+    assert Keccak512(b'test').hexdigest(fmt='str') == keccak.new(data=b'test', digest_bits=512).hexdigest()
 
     # Test long message
     k512 = Keccak224()
@@ -243,3 +264,16 @@ if __name__ == "__main__":
     with open('requirements.txt', 'rb') as f:
         k512.absorb(f)
     print(f"Keccak-512 hash for 'requirements.txt' file is {k512.hexdigest()}")
+
+    # SHA3-512 text test
+    # https://www.di-mgt.com.au/sha_testvectors.html
+    # Can take a few seconds to calculate:
+    # the_long_a = b'a' * 1000000
+    # assert SHA3_512(the_long_a).hexdigest(fmt='str') == \
+    #        '3c3a876da14034ab60627c077bb98f7e120a2a5370212dffb3385a18d4f38859' \
+    #        'ed311d0a9d5141ce9cc5c66ee689b266a8aa18ace8282a0e0db596c90b0a7b87'
+
+    sha3_512 = SHA3_512()
+    with open('requirements.txt', 'rb') as f:
+        sha3_512.absorb(f)
+    print(f"SHA3-512 hash for 'requirements.txt' file is {sha3_512.hexdigest()}")

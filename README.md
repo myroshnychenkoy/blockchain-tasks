@@ -30,12 +30,14 @@ Keccak hash algorithm was chosen. This implementation operates on big-endian LSB
 
 ### Supported hash functions
 
-|Hash instance| r  | c  |Digest length(bits)|Mbits|
-|-------------|----|----|-------------------|-----|
-|Keccak224    |1152| 448| 224               |''   |
-|Keccak256    |1088| 512| 256               |''   |
-|Keccak384    | 832| 768| 384               |''   |
-|Keccak512    | 576|1024| 512               |''   |
+**Note:** whereis internals of Keccak and SHA3 are the same, the padding function differs, so hashes would be different.
+
+| Hash instance       | r  | c  |Digest length(bits)|
+|---------------------|----|----|-------------------|
+|Keccak224 / SHA3_224 |1152| 448| 224               |
+|Keccak256 / SHA3_256 |1088| 512| 256               |
+|Keccak384 / SHA3_384 | 832| 768| 384               |
+|Keccak512 / SHA3_512 | 576|1024| 512               |
 
 ### Usage example
 
@@ -47,11 +49,11 @@ k512.absorb(b'Message part 2')
 print(k512.hexdigest(fmt='str'))
 ```
 
-Get the Keccak-512 file hash:
+Get the SHA3-512 file hash:
 
 ``` Python
-k512 = Keccak512()
+sha3_512 = SHA3_512()
 with open('<file_name>', 'rb') as f:
-    k512.absorb(f)
-print(f"Keccak-512 hash for '<file_name>' file is {k512.hexdigest()}")
+    sha3_512.absorb(f)
+print(f"SHA3-512 hash for '<file_name>' file is {sha3_512.hexdigest()}")
 ```
