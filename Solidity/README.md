@@ -119,6 +119,15 @@ Implement contract D that inherits from B and C contracts. You are not allowed t
 
 Implement contract `StrangeCalculator` in such a way that changes private variables one and pointMap in the inherited contract. Of course, high-level Solidity will not allow you to do that, however, the assembly will.
 
-1. Implement `setNewValues` function in the StrangeClculator contract. You are not allowed to change anything else.
+1. Implement `setNewValues` function in the `StrangeCalculator` contract. You are not allowed to change anything else.
 2. The call to `setNewValues` function should change private variables one and pointMap with the key `[12]` to parameters first and point. Use assembly for that.
 3. Use the [validator](Task5_Validator.sol) contract to check if you have implemented the task correctly.
+
+---
+
+## Task 6 - Solidity delegatecall & storage collision
+
+Implement a `StorageCollider` contract to change the value of a private variable array (yeah, just like in the previous task) in the `collide()` function. To achieve that you will have to either implement your own external library (the hard way) or `delegatecall` a regular contract (the easy way) to initiate a storage collision. You are not allowed to use assembly (inside `StorageCollider`) for that.
+
+1. Implement `collide()` function in the `StorageCollider` contract. This function has to use `delegatecall`.
+2. You may implement additional logic inside the `StorageCollider` contract. However, you are not allowed to change the `ArrayStorage` contract.
