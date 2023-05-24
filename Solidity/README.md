@@ -131,3 +131,57 @@ Implement a `StorageCollider` contract to change the value of a private variable
 
 1. Implement `collide()` function in the `StorageCollider` contract. This function has to use `delegatecall`.
 2. You may implement additional logic inside the `StorageCollider` contract. However, you are not allowed to change the `ArrayStorage` contract.
+
+---
+
+## Task 7 - Solidity: Ethereum Signature
+
+Implement a `ValueSetter` contract that updates a private variable value using the `setValue(uint256 value_, bytes memory signature)` function. In order to achieve this, you need to extract `r, s`, and `v` components from the signature, create a messageHash following the [EIP-191 standard](https://eips.ethereum.org/EIPS/eip-191), and then call the `setValueRaw` function with the provided `value_`, calculated `messageHash`, and extracted signature components (`r, s`, and `v`).
+
+### Steps
+
+1. Implement the `setValue(uint256 value_, bytes memory signature)` function in the `ValueSetter` contract.
+    1. Extract `r, s`, and `v` from the provided signature.
+    2. Build the messageHash following the EIP-191 standard:
+       1. The message that is passed to the standard is the keccak256 hash of the abi encoded data.
+       2. The data is formed as a concatenation of `value_` (should be 712 for this task), Sepolia chain ID, and the name of the `ValueSetter` contract (which is "ValueSetter").
+    3. Call the `setValueRaw` function with the `value_`, calculated `messageHash`, and extracted signature components (`r, s`, and `v`) to update the private variable value.
+2. You may implement additional logic within the `ValueSetter` contract, but you are not allowed to modify the `AuthorizedValue` contract.
+3. Use a validator contract to verify the implementation of the task.
+4. You may get a lot of “Invalid signature.” errors. This means that the constructed message is not correct.
+
+---
+
+## Task 8 - Whitelisted ERC20 Token
+
+Implement `MyToken` contract which is a regular `ERC20` token but with some modifications.
+The MyToken contract should be deployed with the following parameters:
+
+- Token Name: My Token
+- Token Symbol: MT
+- Decimals: 4
+
+This token should be Ownable, where **only the owner should have access to the token minting and whitelist mechanism**.
+Whitelist mechanism - it is a special restriction on the contract to limit transfer functionality.
+Those restrictions are:
+
+- Revert if transfer is to a contract address
+- If the contract address is in the whitelist, transfer should proceed as usual
+- Transfer to EOA also should work as usual
+- Minting should work as usual, too
+
+Technically whitelist is a mapping. You will have to implement the following function to manage it:  
+
+1. `addToWhitelist()` - This function should add a new address to the whitelist.
+2. `removeFromWhitelist()` - This function should remove an address from the whitelist.
+
+### Limitations
+
+Do not override the initial transfer function. All transfers, i.e., `_transfer`, `transfer`, or `transferFrom` should remain unchanged.
+You are not allowed to modify the BaseToken contract.
+
+### What to hand in
+
+1. Deploy and verify the `MyToken` contract.
+2. Transfer ownership to the [validator](./Validator8.sol) contract.
+3. In the validator contract, call `validate()` to check if the task is implemented correctly.
