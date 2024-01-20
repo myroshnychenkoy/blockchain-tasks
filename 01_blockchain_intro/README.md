@@ -94,7 +94,7 @@ brute_multiprocess(key_length, num_processes)
 
 In the real-world scenario, key brute forcing would mean that we would initially have a key derivative value (hash or elliptic curve multiplication result, etc.). In that case, we would either enumerate key space, hashing the key candidates and comparing them to the target key hash, or use algorithms like baby-step giant-step to find the key. These methods are computationally intensive and usually feasible only on reduced key space (i.e., as in the Bitcoin puzzle, where private keys are generated explicitly with many zeroes in the beginning).
 
-For this task, we just compare the key kanditate it to the target key.
+For this task, we just compare the key canditate it to the target key.
 
 I was able to "find" the key up to 32 bit. On 64 bit I stopped the program execution after a few hours.
 
