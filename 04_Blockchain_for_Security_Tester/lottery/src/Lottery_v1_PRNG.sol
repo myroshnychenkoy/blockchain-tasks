@@ -18,7 +18,7 @@ contract Lottery is Ownable {
         uint256 amount;
     }
 
-    constructor(address initialOwner) Ownable(initialOwner) {
+    constructor() Ownable(msg.sender) {
         targetBlockNumber = 0;
         locked = false;
     }

@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.13;
+pragma solidity ^0.8.23;
 
 import {Test, console} from "forge-std/Test.sol";
 import {Ownable} from "@openzeppelin/contracts/access/Ownable.sol";
@@ -29,7 +29,8 @@ contract LotteryTest is Test {
         // emit log("Owner address:");
         // emit log_address(owner);
         // console.logAddress(owner);
-        lottery = new Lottery(owner);
+        vm.prank(owner);
+        lottery = new Lottery();
     }
 
     function setUp_enrollUsers() internal {
