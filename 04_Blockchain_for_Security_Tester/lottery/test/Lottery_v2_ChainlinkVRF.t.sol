@@ -19,7 +19,7 @@ contract LotteryTest is Test {
     uint256 entranceFee;
     uint256 interval;
     address vrfCoordinator;
-    bytes32 gasLane;
+    bytes32 keyHash;
     uint64 subscriptionId;
     uint32 callbackGasLimit;
     address link;
@@ -44,7 +44,7 @@ contract LotteryTest is Test {
         DeployLottery deployer = new DeployLottery();
         (lottery, helperConfig) = deployer.run();
         vm.pauseGasMetering();
-        (entranceFee, interval, vrfCoordinator, gasLane, subscriptionId, callbackGasLimit, link, deployerKey) =
+        (entranceFee, interval, vrfCoordinator, keyHash, subscriptionId, callbackGasLimit, link, deployerKey) =
             helperConfig.activeNetworkConfig();
         console.logAddress(lottery.owner());
         vm.resumeGasMetering();

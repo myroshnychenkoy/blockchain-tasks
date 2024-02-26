@@ -16,7 +16,7 @@ contract DeployLottery is Script {
             uint256 entranceFee,
             uint256 interval,
             address vrfCoordinator,
-            bytes32 gasLane,
+            bytes32 keyHash,
             uint64 subscriptionId,
             uint32 callbackGasLimit,
             address link,
@@ -32,8 +32,8 @@ contract DeployLottery is Script {
         }
 
         vm.startBroadcast();
-        // Lottery lottery = new Lottery(entranceFee, interval, vrfCoordinator, gasLane, subscriptionId, callbackGasLimit);
-        Lottery lottery = new Lottery(vrfCoordinator, subscriptionId);
+        // Lottery lottery = new Lottery(entranceFee, interval, vrfCoordinator, keyHash, subscriptionId, callbackGasLimit);
+        Lottery lottery = new Lottery(vrfCoordinator, subscriptionId, keyHash, callbackGasLimit);
         vm.stopBroadcast();
 
         AddConsumer addConsumer = new AddConsumer();

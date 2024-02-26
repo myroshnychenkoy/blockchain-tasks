@@ -22,22 +22,19 @@ contract Lottery is Ownable, VRFConsumerBaseV2 {
         uint256 amount;
     }
 
-    uint256 public constant LOCK_HOLD_DURATION_BLOCKS = 250;
-    uint256 public constant LOCK_HOLD_WINNER_RESELECT_DURATION_BLOCKS = 50;
     uint256 public constant MINIMAL_BET = 5e17; // 0.5 Ether
 
-    // address public constant vrf_COORDINATOR_ADDR = 0x8103B0A8A00be2DDC778e6e7eaa21791Cd364625; // Sepolia
     // The gas lane to use, which specifies the maximum gas price to bump to.
     // For a list of available gas lanes on each network,
     // see https://docs.chain.link/docs/vrf/v2/subscription/supported-networks/#configurations
-    bytes32 constant vrf_keyHash = 0x474e34a077df58807dbe9c96d3c009b23b3c6d0cce433e59bbf5b34f823bc56c; // Sepolia, 150 gwei Key Hash
-    uint16 constant vrf_requestConfirmations = 5;
+    bytes32 private immutable vrf_keyHash;
+    uint16 constant vrf_requestConfirmations = 3;
 
     // Depends on the number of requested values that you want sent to the
     // fulfillRandomWords() function. Storing each word costs about 20,000 gas.
     // Test and adjust this limit based on the network that you select, the size of the request,
     // and the processing of the callback request in the fulfillRandomWords() function.
-    uint32 vrf_callbackGasLimit = 40000;
+    uint32 private immutable vrf_callbackGasLimit;
     vrfRequestStatus public vrf_requestStatus;
     uint256 public vrf_lastRequestId;
 
@@ -47,13 +44,15 @@ contract Lottery is Ownable, VRFConsumerBaseV2 {
     VRFCoordinatorV2Interface vrf_COORDINATOR;
     uint64 vrf_subscriptionId;
 
-    constructor(address vrfCoordinator, uint64 vrfSubscriptionId)
+    constructor(address vrfCoordinator, uint64 vrfSubscriptionId, bytes32 keyHash, uint32 callbackGasLimit)
         Ownable(msg.sender)
         VRFConsumerBaseV2(vrfCoordinator)
     {
         locked = false;
         vrf_COORDINATOR = VRFCoordinatorV2Interface(vrfCoordinator);
         vrf_subscriptionId = vrfSubscriptionId;
+        vrf_keyHash = keyHash;
+        vrf_callbackGasLimit = callbackGasLimit;
     }
 
     modifier notOwner() {
