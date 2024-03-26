@@ -174,3 +174,43 @@ SOLC_VERSION=0.4.15 slither not-so-smart-contracts/wrong_constructor_name/Rubixi
 
 > [!WARNING]
 > This is a logic error. Slither did not flag anything suspicious in the wrongly named constructor.
+
+
+## Symbolic execution | Mythril
+
+```bash
+podman pull mythril/myth
+podman run -v $(pwd)/not-so-smart-contracts:/tmp mythril/myth analyze /tmp/contract.sol
+```
+
+### Integer Overflow
+
+mythril found the integer overflow in `integer_overflow/integer_overflow_1.sol`:
+
+```
+==== Integer Arithmetic Bugs ====
+SWC ID: 101
+Severity: High
+Contract: Overflow
+Function name: add(uint256)
+PC address: 193
+Estimated Gas Usage: 6050 - 26426
+The arithmetic operator can overflow.
+It is possible to cause an integer overflow or underflow in the arithmetic operation. 
+--------------------
+In file: /tmp/integer_overflow/integer_overflow_1.sol:7
+
+sellerBalance += value
+
+--------------------
+Initial State:
+
+Account: [CREATOR], balance: 0x0, nonce:0, storage:{}
+Account: [ATTACKER], balance: 0x0, nonce:0, storage:{}
+
+Transaction Sequence:
+
+Caller: [CREATOR], calldata: , decoded_data: , value: 0x0
+Caller: [CREATOR], function: safe_add(uint256), txdata: 0x3e127e76c0, decoded_data: (86844066927987146567678238756515930889952488499230423029593188005934847229952,), value: 0x0
+Caller: [SOMEGUY], function: add(uint256), txdata: 0x1003e2d274, decoded_data: (52468290435658901051305602582061708246012961801618380580379217753585636868096,), value: 0x0
+```
