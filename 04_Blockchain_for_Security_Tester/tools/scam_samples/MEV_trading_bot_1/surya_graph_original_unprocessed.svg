@@ -1,0 +1,442 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="703pt" height="2607pt" viewBox="0.00 0.00 702.76 2607.00">
+<g id="graph0" class="graph" transform="translate(47.03075006392544,2491.210240124809) scale(1.3971901195002214)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-2603 698.76,-2603 698.76,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterIERC20">
+
+<path fill="rgb(48,64,88)" stroke="rgb(48,64,88)" d="M358.61,-8C358.61,-8 485.28,-8 485.28,-8 491.28,-8 497.28,-14 497.28,-20 497.28,-20 497.28,-397 497.28,-397 497.28,-403 491.28,-409 485.28,-409 485.28,-409 358.61,-409 358.61,-409 352.61,-409 346.61,-403 346.61,-397 346.61,-397 346.61,-20 346.61,-20 346.61,-14 352.61,-8 358.61,-8" style=""/>
+<text text-anchor="middle" x="421.94" y="-392.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IERC20  (iface)</text>
+</g>
+<g id="clust2" class="cluster" data-name="clusterIUniswapV2Router">
+
+<path fill="rgb(48,64,88)" stroke="rgb(48,64,88)" d="M20,-1212C20,-1212 291.54,-1212 291.54,-1212 297.54,-1212 303.54,-1218 303.54,-1224 303.54,-1224 303.54,-2249 303.54,-2249 303.54,-2255 297.54,-2261 291.54,-2261 291.54,-2261 20,-2261 20,-2261 14,-2261 8,-2255 8,-2249 8,-2249 8,-1224 8,-1224 8,-1218 14,-1212 20,-1212" style=""/>
+<text text-anchor="middle" x="155.77" y="-2244.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IUniswapV2Router  (iface)</text>
+</g>
+<g id="clust3" class="cluster" data-name="clusterIUniswapV2Pair">
+
+<path fill="rgb(48,64,88)" stroke="rgb(48,64,88)" d="M91.45,-2269C91.45,-2269 220.09,-2269 220.09,-2269 226.09,-2269 232.09,-2275 232.09,-2281 232.09,-2281 232.09,-2442 232.09,-2442 232.09,-2448 226.09,-2454 220.09,-2454 220.09,-2454 91.45,-2454 91.45,-2454 85.45,-2454 79.45,-2448 79.45,-2442 79.45,-2442 79.45,-2281 79.45,-2281 79.45,-2275 85.45,-2269 91.45,-2269" style=""/>
+<text text-anchor="middle" x="155.77" y="-2437.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">IUniswapV2Pair  (iface)</text>
+</g>
+<g id="clust4" class="cluster" data-name="clusterDexInterface">
+
+<path fill="#445773" stroke="#445773" d="M39.86,-417C39.86,-417 674.76,-417 674.76,-417 680.76,-417 686.76,-423 686.76,-429 686.76,-429 686.76,-1192 686.76,-1192 686.76,-1198 680.76,-1204 674.76,-1204 674.76,-1204 39.86,-1204 39.86,-1204 33.86,-1204 27.86,-1198 27.86,-1192 27.86,-1192 27.86,-429 27.86,-429 27.86,-423 33.86,-417 39.86,-417" style=""/>
+<text text-anchor="middle" x="357.31" y="-1187.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">DexInterface</text>
+</g>
+<g id="clust5" class="cluster" data-name="cluster_01">
+
+<polygon fill="rgb(46,62,86)" stroke="rgb(41,55,77)" points="82.77,-2462 82.77,-2591 456.94,-2591 456.94,-2462 82.77,-2462" style=""/>
+<text text-anchor="middle" x="269.86" y="-2574.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- IERC20.balanceOf -->
+<g id="node1" class="node" pointer-events="visible" data-name="IERC20.balanceOf">
+
+<ellipse fill="rgb(65,73,86)" stroke="rgb(65,73,86)" stroke-width="3" cx="421.94" cy="-358" rx="50.92" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-353.8" font-family="Times,serif" font-size="14.00" style="">balanceOf</text>
+</g>
+<!-- IERC20.transfer -->
+<g id="node2" class="node" pointer-events="visible" data-name="IERC20.transfer">
+
+<ellipse fill="rgb(65,73,86)" stroke="rgb(65,73,86)" stroke-width="3" cx="421.94" cy="-304" rx="40.55" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-299.8" font-family="Times,serif" font-size="14.00" style="">transfer</text>
+</g>
+<!-- IERC20.allowance -->
+<g id="node3" class="node" pointer-events="visible" data-name="IERC20.allowance">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="421.94" cy="-250" rx="50.36" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-245.8" font-family="Times,serif" font-size="14.00" style="">allowance</text>
+</g>
+<!-- IERC20.approve -->
+<g id="node4" class="node" pointer-events="visible" data-name="IERC20.approve">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="421.94" cy="-196" rx="42.28" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-191.8" font-family="Times,serif" font-size="14.00" style="">approve</text>
+</g>
+<!-- IERC20.transferFrom -->
+<g id="node5" class="node" pointer-events="visible" data-name="IERC20.transferFrom">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="421.94" cy="-142" rx="61.41" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-137.8" font-family="Times,serif" font-size="14.00" style="">transferFrom</text>
+</g>
+<!-- IERC20.createStart -->
+<g id="node6" class="node" pointer-events="visible" data-name="IERC20.createStart">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="421.94" cy="-88" rx="52.14" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-83.8" font-family="Times,serif" font-size="14.00" style="">createStart</text>
+</g>
+<!-- IERC20.createContract -->
+<g id="node7" class="node" pointer-events="visible" data-name="IERC20.createContract">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="421.94" cy="-34" rx="67.17" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-29.8" font-family="Times,serif" font-size="14.00" style="">createContract</text>
+</g>
+<!-- IUniswapV2Router.factory -->
+<g id="node8" class="node" pointer-events="visible" data-name="IUniswapV2Router.factory">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2210" rx="38.26" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2205.8" font-family="Times,serif" font-size="14.00" style="">factory</text>
+</g>
+<!-- IUniswapV2Router.WETH -->
+<g id="node9" class="node" pointer-events="visible" data-name="IUniswapV2Router.WETH">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2156" rx="38.85" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2151.8" font-family="Times,serif" font-size="14.00" style="">WETH</text>
+</g>
+<!-- IUniswapV2Router.addLiquidity -->
+<g id="node10" class="node" pointer-events="visible" data-name="IUniswapV2Router.addLiquidity">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2102" rx="60.85" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2097.8" font-family="Times,serif" font-size="14.00" style="">addLiquidity</text>
+</g>
+<!-- IUniswapV2Router.addLiquidityETH -->
+<g id="node11" class="node" pointer-events="visible" data-name="IUniswapV2Router.addLiquidityETH">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,81,102)" stroke-width="3" cx="155.77" cy="-2048" rx="79.89" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2043.8" font-family="Times,serif" font-size="14.00" style="">addLiquidityETH</text>
+</g>
+<!-- IUniswapV2Router.removeLiquidity -->
+<g id="node12" class="node" pointer-events="visible" data-name="IUniswapV2Router.removeLiquidity">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1994" rx="75.88" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1989.8" font-family="Times,serif" font-size="14.00" style="">removeLiquidity</text>
+</g>
+<!-- IUniswapV2Router.removeLiquidityETH -->
+<g id="node13" class="node" pointer-events="visible" data-name="IUniswapV2Router.removeLiquidityETH">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1940" rx="94.92" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1935.8" font-family="Times,serif" font-size="14.00" style="">removeLiquidityETH</text>
+</g>
+<!-- IUniswapV2Router.removeLiquidityWithPermit -->
+<g id="node14" class="node" pointer-events="visible" data-name="IUniswapV2Router.removeLiquidityWithPermit">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1886" rx="120.99" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1881.8" font-family="Times,serif" font-size="14.00" style="">removeLiquidityWithPermit</text>
+</g>
+<!-- IUniswapV2Router.removeLiquidityETHWithPermit -->
+<g id="node15" class="node" pointer-events="visible" data-name="IUniswapV2Router.removeLiquidityETHWithPermit">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1832" rx="139.54" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1827.8" font-family="Times,serif" font-size="14.00" style="">removeLiquidityETHWithPermit</text>
+</g>
+<!-- IUniswapV2Router.swapExactTokensForTokens -->
+<g id="node16" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapExactTokensForTokens">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1778" rx="123.28" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1773.8" font-family="Times,serif" font-size="14.00" style="">swapExactTokensForTokens</text>
+</g>
+<!-- IUniswapV2Router.swapTokensForExactTokens -->
+<g id="node17" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapTokensForExactTokens">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1724" rx="123.28" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1719.8" font-family="Times,serif" font-size="14.00" style="">swapTokensForExactTokens</text>
+</g>
+<!-- IUniswapV2Router.swapExactETHForTokens -->
+<g id="node18" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapExactETHForTokens">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,81,102)" stroke-width="3" cx="155.77" cy="-1670" rx="113.46" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1665.8" font-family="Times,serif" font-size="14.00" style="">swapExactETHForTokens</text>
+</g>
+<!-- IUniswapV2Router.swapTokensForExactETH -->
+<g id="node19" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapTokensForExactETH">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1616" rx="113.46" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1611.8" font-family="Times,serif" font-size="14.00" style="">swapTokensForExactETH</text>
+</g>
+<!-- IUniswapV2Router.swapExactTokensForETH -->
+<g id="node20" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapExactTokensForETH">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1562" rx="113.46" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1557.8" font-family="Times,serif" font-size="14.00" style="">swapExactTokensForETH</text>
+</g>
+<!-- IUniswapV2Router.swapETHForExactTokens -->
+<g id="node21" class="node" pointer-events="visible" data-name="IUniswapV2Router.swapETHForExactTokens">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,81,102)" stroke-width="3" cx="155.77" cy="-1508" rx="113.46" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1503.8" font-family="Times,serif" font-size="14.00" style="">swapETHForExactTokens</text>
+</g>
+<!-- IUniswapV2Router.quote -->
+<g id="node22" class="node" pointer-events="visible" data-name="IUniswapV2Router.quote">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1454" rx="32.48" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1449.8" font-family="Times,serif" font-size="14.00" style="">quote</text>
+</g>
+<!-- IUniswapV2Router.getAmountOut -->
+<g id="node23" class="node" pointer-events="visible" data-name="IUniswapV2Router.getAmountOut">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1400" rx="68.95" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1395.8" font-family="Times,serif" font-size="14.00" style="">getAmountOut</text>
+</g>
+<!-- IUniswapV2Router.getAmountIn -->
+<g id="node24" class="node" pointer-events="visible" data-name="IUniswapV2Router.getAmountIn">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1346" rx="62.56" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1341.8" font-family="Times,serif" font-size="14.00" style="">getAmountIn</text>
+</g>
+<!-- IUniswapV2Router.getAmountsOut -->
+<g id="node25" class="node" pointer-events="visible" data-name="IUniswapV2Router.getAmountsOut">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1292" rx="72.96" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1287.8" font-family="Times,serif" font-size="14.00" style="">getAmountsOut</text>
+</g>
+<!-- IUniswapV2Router.getAmountsIn -->
+<g id="node26" class="node" pointer-events="visible" data-name="IUniswapV2Router.getAmountsIn">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-1238" rx="66.08" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1233.8" font-family="Times,serif" font-size="14.00" style="">getAmountsIn</text>
+</g>
+<!-- IUniswapV2Pair.token0 -->
+<g id="node27" class="node" pointer-events="visible" data-name="IUniswapV2Pair.token0">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2403" rx="37.14" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2398.8" font-family="Times,serif" font-size="14.00" style="">token0</text>
+</g>
+<!-- IUniswapV2Pair.token1 -->
+<g id="node28" class="node" pointer-events="visible" data-name="IUniswapV2Pair.token1">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2349" rx="37.14" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2344.8" font-family="Times,serif" font-size="14.00" style="">token1</text>
+</g>
+<!-- IUniswapV2Pair.swap -->
+<g id="node29" class="node" pointer-events="visible" data-name="IUniswapV2Pair.swap">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,74,95)" stroke-width="3" cx="155.77" cy="-2295" rx="30.77" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-2290.8" font-family="Times,serif" font-size="14.00" style="">swap</text>
+</g>
+<!-- DexInterface.&lt;Constructor&gt; -->
+<g id="node30" class="node" pointer-events="visible" data-name="DexInterface.&lt;Constructor&gt;">
+
+<ellipse fill="rgb(66,70,92)" stroke="rgb(66,70,92)" stroke-width="3" cx="155.77" cy="-1153" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1148.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+</g>
+<!-- DexInterface.onlyOwner -->
+<g id="node31" class="node" pointer-events="visible" data-name="DexInterface.onlyOwner">
+
+<polygon fill="rgb(65,73,86)" stroke="rgb(44,75,94)" stroke-width="3" points="214.72,-1087.54 214.72,-1102.46 180.19,-1113 131.35,-1113 96.82,-1102.46 96.82,-1087.54 131.35,-1077 180.19,-1077 214.72,-1087.54" style=""/>
+<polygon fill="none" stroke="rgb(44,75,94)" stroke-width="3" points="218.71,-1084.58 218.71,-1105.42 180.78,-1117 130.76,-1117 92.82,-1105.42 92.82,-1084.58 130.76,-1073 180.78,-1073 218.71,-1084.58" style=""/>
+<text text-anchor="middle" x="155.77" y="-1090.8" font-family="Times,serif" font-size="14.00" style="">onlyOwner</text>
+</g>
+<!-- DexInterface.swap -->
+<g id="node32" class="node" pointer-events="visible" data-name="DexInterface.swap">
+
+<ellipse fill="rgb(65,73,86)" stroke="rgb(65,73,86)" stroke-width="3" cx="421.94" cy="-1037" rx="30.77" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-1032.8" font-family="Times,serif" font-size="14.00" style="">swap</text>
+</g>
+<!-- DexInterface.getAmountOutMin -->
+<g id="node33" class="node" pointer-events="visible" data-name="DexInterface.getAmountOutMin">
+
+<ellipse fill="rgb(65,73,86)" stroke="rgb(65,73,86)" stroke-width="3" cx="421.94" cy="-929" rx="85.14" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-924.8" font-family="Times,serif" font-size="14.00" style="">getAmountOutMin</text>
+</g>
+<!-- DexInterface.mempool -->
+<g id="node34" class="node" pointer-events="visible" data-name="DexInterface.mempool">
+
+<ellipse fill="rgb(65,75,90)" stroke="rgb(65,75,90)" stroke-width="3" cx="155.77" cy="-983" rx="47.53" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-978.8" font-family="Times,serif" font-size="14.00" style="">mempool</text>
+</g>
+<!-- DexInterface.mempool&#45;&gt;DexInterface.getAmountOutMin -->
+<g id="edge1" class="edge" data-name="DexInterface.mempool-&gt;DexInterface.getAmountOutMin">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M191.85,-969.81C221.63,-962.79 265.48,-954.87 303.54,-947 313.04,-945.03 322.96,-942.89 332.83,-940.76" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="333.27,-944.25 342.3,-938.71 331.79,-937.4 333.27,-944.25" style=""/>
+</g>
+<!-- DexInterface.mempool&#45;&gt;DexInterface.getAmountOutMin -->
+<g id="edge2" class="edge" data-name="DexInterface.mempool-&gt;DexInterface.getAmountOutMin">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M204.46,-982.6C233.22,-978.68 270.56,-971.82 303.54,-965 325.33,-960.49 349.29,-955.07 369.86,-949.62" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="370.54,-953.06 379.25,-947.03 368.68,-946.31 370.54,-953.06" style=""/>
+</g>
+<!-- DexInterface.frontRun -->
+<g id="node35" class="node" pointer-events="visible" data-name="DexInterface.frontRun">
+
+<ellipse fill="rgb(65,75,90)" stroke="rgb(65,75,90)" stroke-width="3" cx="155.77" cy="-1037" rx="45.81" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-1032.8" font-family="Times,serif" font-size="14.00" style="">frontRun</text>
+</g>
+<!-- DexInterface.frontRun&#45;&gt;DexInterface.swap -->
+<g id="edge3" class="edge" data-name="DexInterface.frontRun-&gt;DexInterface.swap">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M201.28,-1031.8C250.48,-1029.72 329.17,-1029.73 377.8,-1031.85" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="377.49,-1035.34 387.65,-1032.35 377.84,-1028.35 377.49,-1035.34" style=""/>
+</g>
+<!-- DexInterface.frontRun&#45;&gt;DexInterface.swap -->
+<g id="edge4" class="edge" data-name="DexInterface.frontRun-&gt;DexInterface.swap">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M201.28,-1042.2C250.48,-1044.28 329.17,-1044.27 377.8,-1042.15" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="377.84,-1045.65 387.65,-1041.65 377.49,-1038.66 377.84,-1045.65" style=""/>
+</g>
+<!-- DexInterface.estimateTriDexTrade -->
+<g id="node36" class="node" pointer-events="visible" data-name="DexInterface.estimateTriDexTrade">
+
+<ellipse fill="rgb(65,75,90)" stroke="rgb(65,75,90)" stroke-width="3" cx="155.77" cy="-929" rx="93.73" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-924.8" font-family="Times,serif" font-size="14.00" style="">estimateTriDexTrade</text>
+</g>
+<!-- DexInterface.estimateTriDexTrade&#45;&gt;DexInterface.getAmountOutMin -->
+<g id="edge5" class="edge" data-name="DexInterface.estimateTriDexTrade-&gt;DexInterface.getAmountOutMin">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M229.65,-916.79C264.2,-915.18 305.57,-915.08 340.98,-916.48" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="340.55,-919.97 350.7,-916.93 340.87,-912.97 340.55,-919.97" style=""/>
+</g>
+<!-- DexInterface.estimateTriDexTrade&#45;&gt;DexInterface.getAmountOutMin -->
+<g id="edge6" class="edge" data-name="DexInterface.estimateTriDexTrade-&gt;DexInterface.getAmountOutMin">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M250.65,-929C274.05,-929 299.2,-929 322.8,-929" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="322.7,-932.5 332.7,-929 322.7,-925.5 322.7,-932.5" style=""/>
+</g>
+<!-- DexInterface.estimateTriDexTrade&#45;&gt;DexInterface.getAmountOutMin -->
+<g id="edge7" class="edge" data-name="DexInterface.estimateTriDexTrade-&gt;DexInterface.getAmountOutMin">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M229.65,-941.21C264.2,-942.82 305.57,-942.92 340.98,-941.52" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="340.87,-945.03 350.7,-941.07 340.55,-938.03 340.87,-945.03" style=""/>
+</g>
+<!-- DexInterface.getDexRouter -->
+<g id="node37" class="node" pointer-events="visible" data-name="DexInterface.getDexRouter">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="613.55" cy="-794" rx="65.41" ry="18" style=""/>
+<text text-anchor="middle" x="613.55" y="-789.8" font-family="Times,serif" font-size="14.00" style="">getDexRouter</text>
+</g>
+<!-- DexInterface.startArbitrageNative -->
+<g id="node38" class="node" pointer-events="visible" data-name="DexInterface.startArbitrageNative">
+
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="421.94" cy="-794" rx="90.31" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-789.8" font-family="Times,serif" font-size="14.00" style="">startArbitrageNative</text>
+</g>
+<!-- DexInterface.startArbitrageNative&#45;&gt;DexInterface.getDexRouter -->
+<g id="edge8" class="edge" data-name="DexInterface.startArbitrageNative-&gt;DexInterface.getDexRouter">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M513.58,-794C520.43,-794 527.3,-794 534.07,-794" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="533.86,-797.5 543.86,-794 533.86,-790.5 533.86,-797.5" style=""/>
+</g>
+<!-- DexInterface.payable -->
+<g id="node49" class="node" pointer-events="visible" data-name="DexInterface.payable">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="613.55" cy="-727" rx="41.13" ry="18" style=""/>
+<text text-anchor="middle" x="613.55" y="-722.8" font-family="Times,serif" font-size="14.00" style="">payable</text>
+</g>
+<!-- DexInterface.startArbitrageNative&#45;&gt;DexInterface.payable -->
+<g id="edge9" class="edge" data-name="DexInterface.startArbitrageNative-&gt;DexInterface.payable">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M469.81,-777.44C499.66,-766.89 538.1,-753.31 567.57,-742.9" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="568.48,-746.29 576.74,-739.65 566.15,-739.69 568.48,-746.29" style=""/>
+</g>
+<!-- DexInterface.getBalance -->
+<g id="node39" class="node" pointer-events="visible" data-name="DexInterface.getBalance">
+
+<ellipse fill="rgb(65,75,90)" stroke="rgb(65,75,90)" stroke-width="3" cx="155.77" cy="-875" rx="53.86" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-870.8" font-family="Times,serif" font-size="14.00" style="">getBalance</text>
+</g>
+<!-- DexInterface.recoverEth -->
+<g id="node40" class="node" pointer-events="visible" data-name="DexInterface.recoverEth">
+
+<ellipse fill="#f2c383" stroke="#f2c383" stroke-width="3" cx="421.94" cy="-720" rx="53.29" ry="18" style=""/>
+<text text-anchor="middle" x="421.94" y="-715.8" font-family="Times,serif" font-size="14.00" style="">recoverEth</text>
+</g>
+<!-- DexInterface.recoverEth&#45;&gt;DexInterface.payable -->
+<g id="edge10" class="edge" data-name="DexInterface.recoverEth-&gt;DexInterface.payable">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M476.26,-721.97C501.92,-722.92 532.61,-724.05 558.37,-725" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="558.2,-728.5 568.32,-725.37 558.45,-721.5 558.2,-728.5" style=""/>
+</g>
+<!-- DexInterface.recoverTokens -->
+<g id="node41" class="node" pointer-events="visible" data-name="DexInterface.recoverTokens">
+
+<ellipse fill="rgb(65,75,90)" stroke="rgb(65,75,90)" stroke-width="3" cx="155.77" cy="-497" rx="68.32" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-492.8" font-family="Times,serif" font-size="14.00" style="">recoverTokens</text>
+</g>
+<!-- DexInterface.recoverTokens&#45;&gt;IERC20.balanceOf -->
+<g id="edge12" class="edge" data-name="DexInterface.recoverTokens-&gt;IERC20.balanceOf">
+
+<path fill="none" stroke="rgb(66,81,102)" stroke-width="2" d="M225.22,-497.26C251.9,-494.27 281.33,-486.81 303.54,-470 326.04,-452.96 312.55,-433.88 331.54,-413 344.17,-399.11 361.11,-387.5 376.84,-378.57" style=""/>
+<polygon fill="rgb(66,81,102)" stroke="rgb(66,81,102)" stroke-width="2" points="378.2,-381.82 385.35,-373.99 374.88,-375.65 378.2,-381.82" style=""/>
+</g>
+<!-- DexInterface.recoverTokens&#45;&gt;IERC20.transfer -->
+<g id="edge11" class="edge" data-name="DexInterface.recoverTokens-&gt;IERC20.transfer">
+
+<path fill="none" stroke="rgb(66,81,102)" stroke-width="2" d="M224.58,-500.26C252.44,-497.99 282.94,-490.25 303.54,-470 348.47,-425.82 289.13,-377.62 331.54,-331 341.14,-320.44 354.72,-313.95 368.4,-309.98" style=""/>
+<polygon fill="rgb(66,81,102)" stroke="rgb(66,81,102)" stroke-width="2" points="369.02,-313.43 377.93,-307.7 367.39,-306.62 369.02,-313.43" style=""/>
+</g>
+<!-- DexInterface.&lt;Receive Ether&gt; -->
+<g id="node42" class="node" pointer-events="visible" data-name="DexInterface.&lt;Receive Ether&gt;">
+
+<ellipse fill="rgb(66,74,95)" stroke="rgb(66,81,102)" stroke-width="3" cx="155.77" cy="-767" rx="76.21" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-762.8" font-family="Times,serif" font-size="14.00" style="">&lt;Receive Ether&gt;</text>
+</g>
+<!-- DexInterface.StartNative -->
+<g id="node43" class="node" pointer-events="visible" data-name="DexInterface.StartNative">
+
+<ellipse fill="#ff9797" stroke="brown" stroke-width="3" cx="155.77" cy="-821" rx="55.03" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-816.8" font-family="Times,serif" font-size="14.00" style="">StartNative</text>
+</g>
+<!-- DexInterface.StartNative&#45;&gt;DexInterface.startArbitrageNative -->
+<g id="edge13" class="edge" data-name="DexInterface.StartNative-&gt;DexInterface.startArbitrageNative">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M209.91,-815.57C243.28,-812.16 287.28,-807.66 326.45,-803.66" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="326.66,-807.15 336.25,-802.66 325.94,-800.19 326.66,-807.15" style=""/>
+</g>
+<!-- DexInterface.SetTradeBalanceETH -->
+<g id="node44" class="node" pointer-events="visible" data-name="DexInterface.SetTradeBalanceETH">
+
+<ellipse fill="rgb(66,70,92)" stroke="rgb(66,70,92)" stroke-width="3" cx="155.77" cy="-659" rx="95.52" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-654.8" font-family="Times,serif" font-size="14.00" style="">SetTradeBalanceETH</text>
+</g>
+<!-- DexInterface.SetTradeBalancePERCENT -->
+<g id="node45" class="node" pointer-events="visible" data-name="DexInterface.SetTradeBalancePERCENT">
+
+<ellipse fill="rgb(66,70,92)" stroke="rgb(66,70,92)" stroke-width="3" cx="155.77" cy="-605" rx="119.83" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-600.8" font-family="Times,serif" font-size="14.00" style="">SetTradeBalancePERCENT</text>
+</g>
+<!-- DexInterface.Stop -->
+<g id="node46" class="node" pointer-events="visible" data-name="DexInterface.Stop">
+
+<ellipse fill="rgb(66,70,92)" stroke="rgb(66,70,92)" stroke-width="3" cx="155.77" cy="-551" rx="29" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-546.8" font-family="Times,serif" font-size="14.00" style="">Stop</text>
+</g>
+<!-- DexInterface.Withdraw -->
+<g id="node47" class="node" pointer-events="visible" data-name="DexInterface.Withdraw">
+
+<ellipse fill="#ffbdb9" stroke="#ffbdb9" stroke-width="3" cx="155.77" cy="-713" rx="49.8" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-708.8" font-family="Times,serif" font-size="14.00" style="">Withdraw</text>
+</g>
+<!-- DexInterface.Withdraw&#45;&gt;DexInterface.recoverEth -->
+<g id="edge14" class="edge" data-name="DexInterface.Withdraw-&gt;DexInterface.recoverEth">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M206.77,-714.32C248.65,-715.43 308.79,-717.03 354.68,-718.24" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="354.4,-721.74 364.49,-718.5 354.59,-714.74 354.4,-721.74" style=""/>
+</g>
+<!-- DexInterface.Key -->
+<g id="node48" class="node" pointer-events="visible" data-name="DexInterface.Key">
+
+<ellipse fill="rgb(66,70,92)" stroke="rgb(66,70,92)" stroke-width="3" cx="155.77" cy="-443" rx="27.25" ry="18" style=""/>
+<text text-anchor="middle" x="155.77" y="-438.8" font-family="Times,serif" font-size="14.00" style="">Key</text>
+</g>
+<!-- key -->
+<g id="node50" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="rgb(65,73,86)" stroke="none" stroke-width="3" points="220.77,-2558 90.77,-2558 90.77,-2470 220.77,-2470 220.77,-2558" style=""/>
+<text text-anchor="start" x="140.41" y="-2539.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="136.52" y="-2519.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="113.97" y="-2499.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="100.37" y="-2479.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node51" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="rgb(65,73,86)" stroke="none" stroke-width="3" points="448.94,-2558 394.94,-2558 394.94,-2470 448.94,-2470 448.94,-2558" style=""/>
+<text text-anchor="start" x="411.94" y="-2539.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="411.94" y="-2519.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="rgb(48,64,88)" stroke="none" points="409.94,-2494 409.94,-2514 434.94,-2514 434.94,-2494 409.94,-2494" style=""/>
+<text text-anchor="start" x="411.94" y="-2499.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="rgb(64,67,88)" points="411.94,-2476 411.94,-2492 432.94,-2492 432.94,-2476 411.94,-2476" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge15" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="rgb(44,75,94)" stroke-width="2" d="M213.77,-2544C296.11,-2544 319.83,-2544 396.21,-2544" style=""/>
+<polygon fill="rgb(44,75,94)" stroke="rgb(44,75,94)" stroke-width="2" points="395.92,-2547.5 405.92,-2544 395.92,-2540.5 395.92,-2547.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge16" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="rgb(66,81,102)" stroke-width="2" d="M213.77,-2524C296.11,-2524 319.83,-2524 396.21,-2524" style=""/>
+<polygon fill="rgb(66,81,102)" stroke="rgb(66,81,102)" stroke-width="2" points="395.92,-2527.5 405.92,-2524 395.92,-2520.5 395.92,-2527.5" style=""/>
+</g>
+</g>
+</svg>

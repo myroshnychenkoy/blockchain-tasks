@@ -1,0 +1,113 @@
+<?xml version="1.0" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="439pt" height="593pt" viewBox="0.00 0.00 438.53 593.00">
+<g id="graph0" class="graph" transform="translate(14.112803636943628,447.9784310087291) scale(0.627991615938628)" data-name="G">
+
+<polygon fill="#2e3e56" stroke="none" points="-4,4 -4,-589 434.53,-589 434.53,4 -4,4" style=""/>
+<g id="clust1" class="cluster" data-name="clusterManager">
+
+<path fill="#445773" stroke="#445773" d="M208.71,-8C208.71,-8 410.53,-8 410.53,-8 416.53,-8 422.53,-14 422.53,-20 422.53,-20 422.53,-127 422.53,-127 422.53,-133 416.53,-139 410.53,-139 410.53,-139 208.71,-139 208.71,-139 202.71,-139 196.71,-133 196.71,-127 196.71,-127 196.71,-20 196.71,-20 196.71,-14 202.71,-8 208.71,-8" style=""/>
+<text text-anchor="middle" x="309.62" y="-122.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">Manager</text>
+</g>
+<g id="clust2" class="cluster" data-name="clusterUniswapV3FlashLoan">
+
+<path fill="#445773" stroke="#445773" d="M20,-147C20,-147 346.68,-147 346.68,-147 352.68,-147 358.68,-153 358.68,-159 358.68,-159 358.68,-428 358.68,-428 358.68,-434 352.68,-440 346.68,-440 346.68,-440 20,-440 20,-440 14,-440 8,-434 8,-428 8,-428 8,-159 8,-159 8,-153 14,-147 20,-147" style=""/>
+<text text-anchor="middle" x="183.34" y="-423.4" font-family="Times,serif" font-size="14.00" fill="#f0f0f0" style="">UniswapV3FlashLoan</text>
+</g>
+<g id="clust3" class="cluster" data-name="cluster_01">
+
+<polygon fill="#2e3e56" stroke="black" points="19.35,-448 19.35,-577 344.62,-577 344.62,-448 19.35,-448" style=""/>
+<text text-anchor="middle" x="181.99" y="-560.4" font-family="Times,serif" font-size="14.00" style="">Legend</text>
+</g>
+<!-- Manager.performTasks -->
+<g id="node1" class="node" pointer-events="visible" data-name="Manager.performTasks">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="309.62" cy="-88" rx="64.84" ry="18" style=""/>
+<text text-anchor="middle" x="309.62" y="-83.8" font-family="Times,serif" font-size="14.00" style="">performTasks</text>
+</g>
+<!-- Manager.uniswapDepositAddress -->
+<g id="node2" class="node" pointer-events="visible" data-name="Manager.uniswapDepositAddress">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="309.62" cy="-34" rx="104.83" ry="18" style=""/>
+<text text-anchor="middle" x="309.62" y="-29.8" font-family="Times,serif" font-size="14.00" style="">uniswapDepositAddress</text>
+</g>
+<!-- UniswapV3FlashLoan.&lt;Constructor&gt; -->
+<g id="node3" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.&lt;Constructor&gt;">
+
+<ellipse fill="#ff9797" stroke="#ff9797" stroke-width="3" cx="92.35" cy="-389" rx="67.55" ry="18" style=""/>
+<text text-anchor="middle" x="92.35" y="-384.8" font-family="Times,serif" font-size="14.00" style="">&lt;Constructor&gt;</text>
+</g>
+<!-- UniswapV3FlashLoan.&lt;Receive Ether&gt; -->
+<g id="node4" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.&lt;Receive Ether&gt;">
+
+<ellipse fill="#ffbdb9" stroke="brown" stroke-width="3" cx="92.35" cy="-335" rx="76.21" ry="18" style=""/>
+<text text-anchor="middle" x="92.35" y="-330.8" font-family="Times,serif" font-size="14.00" style="">&lt;Receive Ether&gt;</text>
+</g>
+<!-- UniswapV3FlashLoan.Stop -->
+<g id="node5" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.Stop">
+
+<ellipse fill="#ff9797" stroke="brown" stroke-width="3" cx="92.35" cy="-281" rx="29" ry="18" style=""/>
+<text text-anchor="middle" x="92.35" y="-276.8" font-family="Times,serif" font-size="14.00" style="">Stop</text>
+</g>
+<!-- UniswapV3FlashLoan.Withdrawal -->
+<g id="node6" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.Withdrawal">
+
+<ellipse fill="#ff9797" stroke="brown" stroke-width="3" cx="92.35" cy="-227" rx="56.74" ry="18" style=""/>
+<text text-anchor="middle" x="92.35" y="-222.8" font-family="Times,serif" font-size="14.00" style="">Withdrawal</text>
+</g>
+<!-- UniswapV3FlashLoan.Start -->
+<g id="node7" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.Start">
+
+<ellipse fill="#ff9797" stroke="brown" stroke-width="3" cx="92.35" cy="-173" rx="29.05" ry="18" style=""/>
+<text text-anchor="middle" x="92.35" y="-168.8" font-family="Times,serif" font-size="14.00" style="">Start</text>
+</g>
+<!-- UniswapV3FlashLoan.Start&#45;&gt;Manager.uniswapDepositAddress -->
+<g id="edge2" class="edge" data-name="UniswapV3FlashLoan.Start-&gt;Manager.uniswapDepositAddress">
+
+<path fill="none" stroke="white" stroke-width="2" d="M104.7,-155.21C121.61,-130.19 155.87,-84.99 196.71,-61 203.3,-57.13 210.42,-53.81 217.77,-50.97" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="218.71,-54.34 227,-47.74 216.41,-47.73 218.71,-54.34" style=""/>
+</g>
+<!-- UniswapV3FlashLoan.payable -->
+<g id="node8" class="node" pointer-events="visible" data-name="UniswapV3FlashLoan.payable">
+
+<ellipse fill="#edad56" stroke="#edad56" stroke-width="3" cx="309.62" cy="-173" rx="41.13" ry="18" style=""/>
+<text text-anchor="middle" x="309.62" y="-168.8" font-family="Times,serif" font-size="14.00" style="">payable</text>
+</g>
+<!-- UniswapV3FlashLoan.Start&#45;&gt;UniswapV3FlashLoan.payable -->
+<g id="edge1" class="edge" data-name="UniswapV3FlashLoan.Start-&gt;UniswapV3FlashLoan.payable">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M122.83,-173C156.6,-173 212.64,-173 254.35,-173" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="254.32,-176.5 264.32,-173 254.32,-169.5 254.32,-176.5" style=""/>
+</g>
+<!-- key -->
+<g id="node9" class="node" pointer-events="visible" data-name="key">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="157.35,-544 27.35,-544 27.35,-456 157.35,-456 157.35,-544" style=""/>
+<text text-anchor="start" x="76.99" y="-525.4" font-family="Times,serif" font-size="14.00" style="">Internal Call</text>
+<text text-anchor="start" x="73.1" y="-505.4" font-family="Times,serif" font-size="14.00" style="">External Call</text>
+<text text-anchor="start" x="50.56" y="-485.4" font-family="Times,serif" font-size="14.00" style="">Defined Contract</text>
+<text text-anchor="start" x="36.95" y="-465.4" font-family="Times,serif" font-size="14.00" style="">Undefined Contract</text>
+</g>
+<!-- key2 -->
+<g id="node10" class="node" pointer-events="visible" data-name="key2">
+
+<polygon fill="#edad56" stroke="none" stroke-width="3" points="336.62,-544 282.62,-544 282.62,-456 336.62,-456 336.62,-544" style=""/>
+<text text-anchor="start" x="299.62" y="-525.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<text text-anchor="start" x="299.62" y="-505.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="#445773" stroke="none" points="297.62,-480 297.62,-500 322.62,-500 322.62,-480 297.62,-480" style=""/>
+<text text-anchor="start" x="299.62" y="-485.4" font-family="Times,serif" font-size="14.00" style="">   </text>
+<polygon fill="none" stroke="#e8726d" points="299.62,-462 299.62,-478 320.62,-478 320.62,-462 299.62,-462" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge3" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="#1bc6a6" stroke-width="2" d="M150.35,-530C210.79,-530 229.09,-530 283.6,-530" style=""/>
+<polygon fill="#1bc6a6" stroke="#1bc6a6" stroke-width="2" points="283.59,-533.5 293.59,-530 283.59,-526.5 283.59,-533.5" style=""/>
+</g>
+<!-- key&#45;&gt;key2 -->
+<g id="edge4" class="edge" data-name="key-&gt;key2">
+
+<path fill="none" stroke="white" stroke-width="2" d="M150.35,-510C210.79,-510 229.09,-510 283.6,-510" style=""/>
+<polygon fill="white" stroke="white" stroke-width="2" points="283.59,-513.5 293.59,-510 283.59,-506.5 283.59,-513.5" style=""/>
+</g>
+</g>
+</svg>
