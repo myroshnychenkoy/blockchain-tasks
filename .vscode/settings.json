@@ -7,4 +7,7 @@
     "editor.defaultFormatter": "JuanBlanco.solidity"
   },
   "solidity.compileUsingRemoteVersion": "v0.8.23",
+  "cSpell.words": [
+    "reentrancy"
+  ]
 }
