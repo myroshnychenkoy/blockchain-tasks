@@ -13,3 +13,6 @@
 [submodule "04_Blockchain_for_Security_Tester/ethernaut/lib/openzeppelin-contracts"]
 	path = 04_Blockchain_for_Security_Tester/ethernaut/lib/openzeppelin-contracts
 	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "04_Blockchain_for_Security_Tester/ethernaut/lib/ethernaut"]
+	path = 04_Blockchain_for_Security_Tester/ethernaut/lib/ethernaut
+	url = https://github.com/OpenZeppelin/ethernaut
